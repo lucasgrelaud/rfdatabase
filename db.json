@@ -1,0 +1,102 @@
+{
+  "frequencies" : {
+    "region_1" : [
+      {
+        "frequency_range"  : [135.7, 137.8],
+        "frequency_base"   : "kHz",
+        "frequency_span"   : "200Hz",
+        "frequency_type"   : "LF",
+        "wave_length"      : "2222m",
+        "EIRP"             : "< 1W",
+        "transmition_mode" : ["CW", "GRSS", "Digital"],
+        "use"              : "Shared bandwidth, Secondary service",
+	"emergency"        : false,
+        "sub_allocation"   : false
+      },
+      {
+        "frequency_range"  : [472, 455],
+        "frequency_base"   : "kHz",
+        "frequency_span"   : "200Hz",
+        "frequency_type"   : "MF",
+        "wave_length"      : "630m",
+        "EIRP"             : "< 1W",
+        "transmition_mode" : ["CW"],
+        "use"              : "Shared bandwidth, Secondary service",
+	"emergency"        : false,
+        "sub_allocation"   : false
+      },
+      {
+        "frequency_range"  : [475, 479],
+        "frequency_base"   : "kHz",
+        "frequency_span"   : "500Hz",
+        "frequency_type"   : "MF",
+        "wave_length"      : "630m",
+        "EIRP"             : "< 1W",
+        "transmition_mode" : ["CW", "Digital"],
+        "use"              : "Shared bandwidth, Secondary service",
+	"emergency"        : false,
+        "sub_allocation"   : false
+      },
+      {
+        "frequency_range"  : [1810, 1838],
+        "frequency_base"   : "kHz",
+        "frequency_span"   : "200Hz",
+        "frequency_type"   : "MF",
+        "wave_length"      : "160m",
+        "EIRP"             : "<= 500W",
+        "transmition_mode" : ["CW"],
+        "use"              : "Exclusive bandwidth, Primary service",
+	"emergency"        : false,
+        "sub_allocation"   : false
+      },
+      {
+        "frequency_range"  : [1816],
+        "frequency_base"   : "kHz",
+        "frequency_span"   : "500Hz",
+        "frequency_type"   : "MF",
+        "wave_length"      : "160m",
+        "EIRP"             : "<= 500W",
+        "transmition_mode" : ["CW QRP"],
+        "use"              : "Exclusive bandwidth, Primary service",
+	"emergency"        : false,
+        "sub_allocation"   : true
+      },
+      {
+        "frequency_range"  : [1840, 1850],
+        "frequency_base"   : "kHz",
+        "frequency_span"   : "2700Hz",
+        "frequency_type"   : "MF",
+        "wave_length"      : "160m",
+        "EIRP"             : "<= 500W",
+        "transmition_mode" : ["All"],
+        "use"              : "Exclusive bandwidth, Primary service",
+	"emergency"        : false,
+        "sub_allocation"   : false
+      },
+      {
+        "frequency_range"  : [1840, 1843],
+        "frequency_base"   : "kHz",
+        "frequency_span"   : "2700Hz",
+        "frequency_type"   : "MF",
+        "wave_length"      : "160m",
+        "EIRP"             : "<= 500W",
+        "transmition_mode" : ["Dgital"],
+        "use"              : "Exclusive bandwidth, Primary service",
+	"emergency"        : false,
+        "sub_allocation"   : true
+      },
+      {
+        "frequency_range"  : [3500, 4000],
+        "frequency_base"   : "MHz",
+        "frequency_span"   : "200Hz",
+        "frequency_type"   : "MF",
+        "wave_length"      : "160m",
+        "EIRP"             : "<= 500W",
+        "transmition_mode" : ["All"],
+        "use"              : "Exclusive bandwidth, Primary service",
+	"emergency"        : false,
+        "sub_allocation"   : false
+      }
+    ]
+  }
+}
