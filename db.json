@@ -1,8 +1,8 @@
 {
-  "version" : "v0.2",
-  "regions" : [
+  "version": "v0.2",
+  "regions": [
     {
-      "id" : 1,
+      "id": 1,
       "name": "Region 1",
       "countries": [
         "Austria",
@@ -121,9 +121,9 @@
       ]
     },
     {
-      "id" : 2,
-      "name" : "Region 2",
-      "countries" : [
+      "id": 2,
+      "name": "Region 2",
+      "countries": [
         "Anguilla",
         "Antigua and Barbuda",
         "Argentina",
@@ -187,9 +187,9 @@
       ]
     },
     {
-      "id" : 3,
-      "name" : "Region 3",
-      "countries" : [
+      "id": 3,
+      "name": "Region 3",
+      "countries": [
         "China",
         "Japan",
         "India",
@@ -210,7 +210,7 @@
         "Papua New Guinea",
         "Solomon Islands",
         "Vanuatu",
-        "Federated States of Micronesia";
+        "Federated States of Micronesia",
         "Guam",
         "Kiribati",
         "Marshall Islands",
@@ -251,7 +251,9 @@
       ],
       "use": "Shared bandwidth, Secondary service",
       "emergency": false,
-      "sub_allocation": false
+      "sub_allocation" : [],
+      "space" : false,
+      "regions" : [1, 2, 3]
     },
     {
       "frequency_range": [
@@ -268,7 +270,9 @@
       ],
       "use": "Shared bandwidth, Secondary service",
       "emergency": false,
-      "sub_allocation": false
+      "sub_allocation" : [],
+      "space" : false,
+      "regions" : [1, 2, 3]
     },
     {
       "frequency_range": [
@@ -286,7 +290,26 @@
       ],
       "use": "Shared bandwidth, Secondary service",
       "emergency": false,
-      "sub_allocation": false
+      "sub_allocation" : [],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        1800,
+        1810
+      ],
+      "frequency_base": "kHz",
+      "frequency_span": "?",
+      "frequency_type": "MF",
+      "wave_length": "160m",
+      "EIRP": "?",
+      "transmition_mode": [],
+      "use": "",
+      "emergency": false,
+      "sub_allocation" : [],
+      "space" : false,
+      "regions" : [2, 3]
     },
     {
       "frequency_range": [
@@ -303,23 +326,25 @@
       ],
       "use": "Exclusive bandwidth, Primary service",
       "emergency": false,
-      "sub_allocation": false
-    },
-    {
-      "frequency_range": [
-        1816
-      ],
-      "frequency_base": "kHz",
-      "frequency_span": "500Hz",
-      "frequency_type": "MF",
-      "wave_length": "160m",
-      "EIRP": "<= 500W",
-      "transmition_mode": [
-        "CW QRP"
-      ],
-      "use": "Exclusive bandwidth, Primary service",
-      "emergency": false,
-      "sub_allocation": true
+      "sub_allocation" : [
+        {
+          "frequency_range": [
+            1816
+          ],
+          "frequency_base": "kHz",
+          "frequency_span": "500Hz",
+          "frequency_type": "MF",
+          "wave_length": "160m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "CW QRP"
+          ],
+          "use": "Exclusive bandwidth, Primary service",
+          "emergency": false,
+          "space" : false,
+          "regions" : [1, 2, 3]
+        }
+      ]
     },
     {
       "frequency_range": [
@@ -336,41 +361,457 @@
       ],
       "use": "Exclusive bandwidth, Primary service",
       "emergency": false,
-      "sub_allocation": false
+      "sub_allocation": [
+        {
+          "frequency_range": [
+            1840,
+            1843
+          ],
+          "frequency_base": "kHz",
+          "frequency_span": "2700Hz",
+          "frequency_type": "MF",
+          "wave_length": "160m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "Dgital"
+          ],
+          "use": "Exclusive bandwidth, Primary service",
+          "emergency": false,
+          "space" : false,
+          "regions" : [1, 2, 3]
+        }
+      ]
     },
     {
       "frequency_range": [
-        1840,
-        1843
+        1850,
+        2000
       ],
       "frequency_base": "kHz",
-      "frequency_span": "2700Hz",
+      "frequency_span": "?",
       "frequency_type": "MF",
       "wave_length": "160m",
-      "EIRP": "<= 500W",
-      "transmition_mode": [
-        "Dgital"
-      ],
-      "use": "Exclusive bandwidth, Primary service",
+      "EIRP": "?",
+      "transmition_mode": [],
+      "use": "?",
       "emergency": false,
-      "sub_allocation": true
+      "sub_allocation": [],
+      "space" : false,
+      "regions" : [2, 3]
     },
     {
       "frequency_range": [
         3500,
-        4000
+        3580
       ],
       "frequency_base": "MHz",
       "frequency_span": "200Hz",
-      "frequency_type": "MF",
-      "wave_length": "160m",
+      "frequency_type": "HF",
+      "wave_length": "80m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [
+        "CW"
+      ],
+      "use": "Shared bandwidth, Equal rights",
+      "emergency": false,
+      "sub_allocation": [
+        {
+          "frequency_range": [
+            3500,
+            3510
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "200Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "CW DX link"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        },
+        {
+          "frequency_range": [
+            3510,
+            3560
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "200Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "CW for Competition"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [
+            {
+              "frequency_range": [
+                3536
+              ],
+              "frequency_base": "MHz",
+              "frequency_span": "200Hz",
+              "frequency_type": "HF",
+              "wave_length": "80m",
+              "EIRP": "<= 500W",
+              "transmition_mode": [
+                "CW for Training, F9TM exchanges"
+              ],
+              "use": "Shared bandwidth, Equal rights",
+              "emergency": false,
+              "sub_allocation": [],
+              "space" : false,
+              "regions" : [1, 2, 3]
+            },
+            {
+              "frequency_range": [
+                3555
+              ],
+              "frequency_base": "MHz",
+              "frequency_span": "200Hz",
+              "frequency_type": "HF",
+              "wave_length": "80m",
+              "EIRP": "<= 500W",
+              "transmition_mode": [
+                "CW QRS"
+              ],
+              "use": "Shared bandwidth, Equal rights",
+              "emergency": false,
+              "sub_allocation": [],
+              "space" : false,
+              "regions" : [1, 2, 3]
+            }
+          ],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        },
+        {
+          "frequency_range": [
+            3560
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "200Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "CW QRP"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        }
+      ],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        3570,
+        3580
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "200Hz",
+      "frequency_type": "HF",
+      "wave_length": "80m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [
+        "Digital"
+      ],
+      "use": "Shared bandwidth, Equal rights",
+      "emergency": false,
+      "sub_allocation": [],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        3580,
+        3600
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "500Hz",
+      "frequency_type": "HF",
+      "wave_length": "80m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [
+        "Digital"
+      ],
+      "use": "Shared bandwidth, Equal rights",
+      "emergency": false,
+      "sub_allocation": [
+        {
+          "frequency_range": [
+            3590,
+            3600
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "500Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "Digital (automated station)"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        }
+      ],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        3600,
+        3800
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "2700Hz",
+      "frequency_type": "HF",
+      "wave_length": "80m",
       "EIRP": "<= 500W",
       "transmition_mode": [
         "All"
       ],
-      "use": "Exclusive bandwidth, Primary service",
+      "use": "Shared bandwidth, Equal rights",
       "emergency": false,
-      "sub_allocation": false
+      "sub_allocation": [
+        {
+          "frequency_range": [
+            3600,
+            3620
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "2700Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "Digital (automated station)"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        },
+        {
+          "frequency_range": [
+            3600,
+            3650
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "2700Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "LSB for Competition"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [
+            {
+              "frequency_range": [
+                3630
+              ],
+              "frequency_base": "MHz",
+              "frequency_span": "2700Hz",
+              "frequency_type": "HF",
+              "wave_length": "80m",
+              "EIRP": "<= 500W",
+              "transmition_mode": [
+                "Digital Voice"
+              ],
+              "use": "Shared bandwidth, Equal rights",
+              "emergency": false,
+              "sub_allocation": [],
+              "space" : false,
+              "regions" : [1, 2, 3]
+            },
+            {
+              "frequency_range": [
+                3690
+              ],
+              "frequency_base": "MHz",
+              "frequency_span": "2700Hz",
+              "frequency_type": "HF",
+              "wave_length": "80m",
+              "EIRP": "<= 500W",
+              "transmition_mode": [
+                "LSB QRP"
+              ],
+              "use": "Shared bandwidth, Equal rights",
+              "emergency": false,
+              "sub_allocation": [],
+              "space" : false,
+              "regions" : [1, 2, 3]
+            }
+          ],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        },
+        {
+          "frequency_range": [
+            3700,
+            3775
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "2700Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "LSB for Competition"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [
+            {
+              "frequency_range": [
+                3735
+              ],
+              "frequency_base": "MHz",
+              "frequency_span": "2700Hz",
+              "frequency_type": "HF",
+              "wave_length": "80m",
+              "EIRP": "<= 500W",
+              "transmition_mode": [
+                "Picture"
+              ],
+              "use": "Shared bandwidth, Equal rights",
+              "emergency": false,
+              "sub_allocation": [],
+              "space" : false,
+              "regions" : [1, 2, 3]
+            }
+          ],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        },
+        {
+          "frequency_range": [
+            3775,
+            3800
+          ],
+          "frequency_base": "MHz",
+          "frequency_span": "2700Hz",
+          "frequency_type": "HF",
+          "wave_length": "80m",
+          "EIRP": "<= 500W",
+          "transmition_mode": [
+            "DX link"
+          ],
+          "use": "Shared bandwidth, Equal rights",
+          "emergency": false,
+          "sub_allocation": [],
+          "space" : false,
+          "regions" : [1, 2, 3]
+        }
+      ],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        3800,
+        4000
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "?",
+      "frequency_type": "HF",
+      "wave_length": "80m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [],
+      "use": "Shared bandwidth, Equal rights",
+      "emergency": false,
+      "sub_allocation": [],
+      "space" : false,
+      "regions" : [2, 3]
+    },
+    {
+      "frequency_range": [
+        3500,
+        3580
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "?",
+      "frequency_type": "HF",
+      "wave_length": "80m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [],
+      "use": "Shared bandwidth, Equal rights",
+      "emergency": false,
+      "sub_allocation": [],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        5.3515,
+        5.3540
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "200Hz",
+      "frequency_type": "MF",
+      "wave_length": "60m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [
+        "CW"
+      ],
+      "use": "?",
+      "emergency": false,
+      "sub_allocation": [],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        5.3540,
+        5.3660
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "2700Hz",
+      "frequency_type": "MF",
+      "wave_length": "60m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [
+        "All", "USB"
+      ],
+      "use": "?",
+      "emergency": false,
+      "sub_allocation": [],
+      "space" : false,
+      "regions" : [1, 2, 3]
+    },
+    {
+      "frequency_range": [
+        5.3660,
+        5.3665
+      ],
+      "frequency_base": "MHz",
+      "frequency_span": "20Hz",
+      "frequency_type": "MF",
+      "wave_length": "60m",
+      "EIRP": "<= 500W",
+      "transmition_mode": [
+        "?"
+      ],
+      "use": "?",
+      "emergency": false,
+      "sub_allocation": [],
+      "space" : false,
+      "regions" : [1, 2, 3]
     }
   ]
 }
