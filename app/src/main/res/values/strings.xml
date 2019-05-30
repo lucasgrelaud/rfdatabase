@@ -12,4 +12,5 @@
     <string name="flr_type_value">type</string>
     <string name="flr_eirp_label">EIRP : </string>
     <string name="flr_eirp_value">eirp</string>
+    <string name="flr_button_desc">Button to switch to frequency details</string>
 </resources>

@@ -10,10 +10,10 @@
         android:id="@+id/flr_frequency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/flr_frequencies"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,7 +21,7 @@
         android:id="@+id/flr_span_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="@string/flr_span_label"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +41,10 @@
         android:id="@+id/flr_type_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="102dp"
         android:layout_marginTop="4dp"
         android:text="@string/flr_type_label"
-        app:layout_constraintStart_toEndOf="@+id/flr_span_value"
+        app:layout_constraintStart_toStartOf="@+id/flr_span_label"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
     <TextView
@@ -61,10 +61,11 @@
         android:id="@+id/lr_eirp_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="4dp"
         android:text="@string/flr_eirp_label"
-        app:layout_constraintStart_toEndOf="@+id/flr_type_value"
-        tools:layout_editor_absoluteY="31dp" />
+        app:layout_constraintStart_toStartOf="@+id/flr_span_label"
+        app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
     <TextView
         android:id="@+id/flr_eirp_value"
@@ -76,15 +77,16 @@
         app:layout_constraintStart_toEndOf="@+id/lr_eirp_label"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ImageButton
+        android:id="@+id/flr_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:contentDescription="@string/flr_button_desc"
         android:rotation="90"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flr_frequency"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/arrow_up_float" />
 
 </android.support.constraint.ConstraintLayout>
