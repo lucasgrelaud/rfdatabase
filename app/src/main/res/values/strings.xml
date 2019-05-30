@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="fl_title">Frequencies listing</string>
     <string name="fl_select_country_text">Select a Country / Zone</string>
+    <string name="uit_label">UIT Region : </string>
+    <string name="uit_name">No country selected</string>
 </resources>
