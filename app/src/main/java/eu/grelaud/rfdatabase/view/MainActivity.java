@@ -1,5 +1,7 @@
 package eu.grelaud.rfdatabase.view;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,6 +26,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private MainController mainController;
+    private SharedPreferences sharedPreferences;
 
     private Spinner countrySelect;
     private ArrayAdapter<String> countrySelectAdapter;
@@ -62,7 +65,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         frequencyListLayoutManager = new LinearLayoutManager(this);
         frequencyList.setLayoutManager(frequencyListLayoutManager);
 
-        mainController = new MainController(this, Injector.getRfDatabaseRestApiInstace());
+        sharedPreferences = this.getSharedPreferences("app_data", Context.MODE_PRIVATE);
+        mainController = new MainController(this, Injector.getRfDatabaseRestApiInstace(), sharedPreferences);
         mainController.start();
     }
 

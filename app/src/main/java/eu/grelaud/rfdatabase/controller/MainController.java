@@ -1,9 +1,12 @@
 package eu.grelaud.rfdatabase.controller;
 
 
+import android.content.SharedPreferences;
 import android.util.Log;
+import com.google.gson.Gson;
 import eu.grelaud.rfdatabase.RFDatabaseRestAPI;
 
+import eu.grelaud.rfdatabase.SharedPreferencesKeys;
 import eu.grelaud.rfdatabase.model.Frequency;
 import eu.grelaud.rfdatabase.model.Region;
 import eu.grelaud.rfdatabase.model.RestFrequencyResponse;
@@ -25,13 +28,19 @@ public class MainController {
     private List<Region> regions;
     private List<Frequency> frequencies;
 
+    private SharedPreferences sharedPreferences;
+    private Gson gson;
 
-    public MainController(MainActivity mainActivity, RFDatabaseRestAPI rfDatabaseRestAPI) {
+
+    public MainController(MainActivity mainActivity, RFDatabaseRestAPI rfDatabaseRestAPI, SharedPreferences sharedPreferences) {
         this.mainActivity = mainActivity;
         this.rfDatabaseRestAPI = rfDatabaseRestAPI;
+        this.sharedPreferences = sharedPreferences;
+        this.gson = new Gson();
     }
 
     public void start() {
+
         Call<RestFrequencyResponse> regionsCall = rfDatabaseRestAPI.getRegions();
         regionsCall.enqueue(new Callback<RestFrequencyResponse>() {
             @Override
@@ -40,7 +49,7 @@ public class MainController {
                 regions = restFrequencyResponse.getRegions();
                 updateCountryList();
                 frequencies = restFrequencyResponse.getFrequencies();
-
+                cacheData(regions, frequencies);
             }
 
             @Override
@@ -49,6 +58,16 @@ public class MainController {
             }
         });
 
+    }
+
+    private void cacheData(List<Region> regions, List<Frequency> frequencies) {
+        String regionCache = this.gson.toJson(regions);
+        String frequenciesCache = this.gson.toJson(frequencies);
+        this.sharedPreferences
+                .edit()
+                .putString(SharedPreferencesKeys.regionCacheKey, regionCache)
+                .putString(SharedPreferencesKeys.frequenciesCacheKey, frequenciesCache)
+                .apply();
     }
 
     private void updateCountryList() {
