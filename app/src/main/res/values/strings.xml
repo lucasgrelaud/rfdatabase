@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">RFDatabase</string>
-    <string name="action_settings">Settings</string>
+    <string name="am_app_name">RFDatabase</string>
+    <string name="mm_action_settings">Settings</string>
     <string name="fl_title">Frequencies listing</string>
     <string name="fl_select_country_text">Select a Country / Zone</string>
+    <string name="uit_label">UIT Region : </string>
+    <string name="uit_name">No country selected</string>
+    <string name="flr_frequencies">Start Freq - End Freq</string>
+    <string name="flr_span_label">Span : </string>
+    <string name="flr_span_value">span</string>
+    <string name="flr_type_label">Type : </string>
+    <string name="flr_type_value">type</string>
+    <string name="flr_eirp_label">EIRP : </string>
+    <string name="flr_eirp_value">eirp</string>
+    <string name="flr_button_desc">Button to switch to frequency details</string>
 </resources>
