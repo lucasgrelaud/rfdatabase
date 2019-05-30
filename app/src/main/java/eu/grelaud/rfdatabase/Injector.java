@@ -22,7 +22,7 @@ public class Injector {
        return retrofit.create(RFDatabaseRestAPI.class);
     }
 
-    static RFDatabaseRestAPI getRfDatabaseRestApiInstace() {
+    public static RFDatabaseRestAPI getRfDatabaseRestApiInstace() {
         if (RF_DATABASE_REST_API == null) {
             RF_DATABASE_REST_API = createRFDatabaseAPI();
         }

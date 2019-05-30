@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight">
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/flr_frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/flr_frequencies"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/flr_span_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/flr_span_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
+
+    <TextView
+        android:id="@+id/flr_span_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/flr_span_value"
+        app:layout_constraintStart_toEndOf="@+id/flr_span_label"
+        app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
+
+    <TextView
+        android:id="@+id/flr_type_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/flr_type_label"
+        app:layout_constraintStart_toStartOf="@+id/flr_span_label"
+        app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
+
+    <TextView
+        android:id="@+id/flr_type_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/flr_type_value"
+        app:layout_constraintStart_toEndOf="@+id/flr_type_label"
+        app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
+
+    <TextView
+        android:id="@+id/lr_eirp_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/flr_eirp_label"
+        app:layout_constraintStart_toStartOf="@+id/flr_span_label"
+        app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
+
+    <TextView
+        android:id="@+id/flr_eirp_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/flr_eirp_value"
+        app:layout_constraintStart_toEndOf="@+id/lr_eirp_label"
+        app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
+
+    <ImageButton
+        android:id="@+id/flr_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/flr_button_desc"
+        android:rotation="90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+</android.support.constraint.ConstraintLayout>

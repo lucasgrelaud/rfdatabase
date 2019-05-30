@@ -1,9 +1,11 @@
 package eu.grelaud.rfdatabase.model;
 
+import java.util.List;
+
 public class Region {
     private int id;
     private String name;
-    private String[] countries;
+    private List<String> countries;
 
     public int getId() {
         return id;
@@ -13,7 +15,7 @@ public class Region {
         return name;
     }
 
-    public String[] getCountries() {
+    public List<String> getCountries() {
         return countries;
     }
 }
