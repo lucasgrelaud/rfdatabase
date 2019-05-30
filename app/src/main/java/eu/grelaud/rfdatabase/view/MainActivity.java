@@ -1,5 +1,9 @@
 package eu.grelaud.rfdatabase.view;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,10 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.*;
 import eu.grelaud.rfdatabase.Injector;
 import eu.grelaud.rfdatabase.R;
 import eu.grelaud.rfdatabase.controller.MainController;
@@ -24,6 +25,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private MainController mainController;
+    private SharedPreferences sharedPreferences;
 
     private Spinner countrySelect;
     private ArrayAdapter<String> countrySelectAdapter;
@@ -46,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -62,7 +63,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         frequencyListLayoutManager = new LinearLayoutManager(this);
         frequencyList.setLayoutManager(frequencyListLayoutManager);
 
-        mainController = new MainController(this, Injector.getRfDatabaseRestApiInstace());
+        sharedPreferences = this.getSharedPreferences("app_data", Context.MODE_PRIVATE);
+
+        mainController = new MainController(this, Injector.getRfDatabaseRestApiInstace(), sharedPreferences,
+                isNetworkAvailable());
         mainController.start();
     }
 
@@ -93,6 +97,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         this.uit_name.setText(uitName);
         this.frequencyListAdapter = new FrequencyListAdpter(frequencies);
         this.frequencyList.setAdapter(this.frequencyListAdapter);
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
+            return true;
+        }
+        else {
+            createToast("No access to the internet. Will use the cached data.");
+            return false;
+        }
+    }
+
+    public void createToast(String message) {
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_SHORT).show();
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
