@@ -6,11 +6,23 @@
     <string name="uit_label">UIT Region : </string>
     <string name="uit_name">No country selected</string>
     <string name="flr_frequencies">Start Freq - End Freq</string>
-    <string name="flr_span_label">Span : </string>
-    <string name="flr_span_value">span</string>
-    <string name="flr_type_label">Type : </string>
-    <string name="flr_type_value">type</string>
-    <string name="flr_eirp_label">EIRP : </string>
-    <string name="flr_eirp_value">eirp</string>
+    <string name="span_label">Span : </string>
+    <string name="span_value">span</string>
+    <string name="type_label">Type : </string>
+    <string name="type_value">type</string>
+    <string name="eirp_label">EIRP : </string>
+    <string name="eirp_value">eirp</string>
+    <string name="frequency_label">Frequency : </string>
+    <string name="frequency_value">freq </string>
+    <string name="wave_length_label">Wave Length : </string>
+    <string name="wave_length_value">wavelength</string>
+    <string name="mode_label">Mode : </string>
+    <string name="mode_value">mode</string>
+    <string name="use_label">Use : </string>
+    <string name="use_value">use</string>
+    <string name="space_label">Space</string>
+    <string name="emergency_label">Emergency</string>
     <string name="flr_button_desc">Button to switch to frequency details</string>
+    <string name="afd_title_label">Frequency details</string>
+
 </resources>

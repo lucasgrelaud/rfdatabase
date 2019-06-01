@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="@string/flr_span_label"
+        android:text="@string/span_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:text="@string/flr_span_value"
+        android:text="@string/span_value"
         app:layout_constraintStart_toEndOf="@+id/flr_span_label"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="102dp"
         android:layout_marginTop="4dp"
-        android:text="@string/flr_type_label"
+        android:text="@string/type_label"
         app:layout_constraintStart_toStartOf="@+id/flr_span_label"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:text="@string/flr_type_value"
+        android:text="@string/type_value"
         app:layout_constraintStart_toEndOf="@+id/flr_type_label"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
         android:layout_marginTop="4dp"
-        android:text="@string/flr_eirp_label"
+        android:text="@string/eirp_label"
         app:layout_constraintStart_toStartOf="@+id/flr_span_label"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:text="@string/flr_eirp_value"
+        android:text="@string/eirp_value"
         app:layout_constraintStart_toEndOf="@+id/lr_eirp_label"
         app:layout_constraintTop_toBottomOf="@+id/flr_frequency" />
 

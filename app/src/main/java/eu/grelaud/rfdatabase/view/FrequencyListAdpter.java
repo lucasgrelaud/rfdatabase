@@ -1,11 +1,15 @@
 package eu.grelaud.rfdatabase.view;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+import eu.grelaud.rfdatabase.AppKeys;
 import eu.grelaud.rfdatabase.R;
 import eu.grelaud.rfdatabase.model.Frequency;
 
@@ -31,9 +35,11 @@ public class FrequencyListAdpter extends RecyclerView.Adapter<FrequencyListAdpte
 
     }
 
+    private Activity parent;
     private List<Frequency> frequencies;
 
-    public FrequencyListAdpter(List<Frequency> frequencies) {
+    public FrequencyListAdpter(Activity parent, List<Frequency> frequencies) {
+        this.parent = parent;
         this.frequencies = frequencies;
     }
 
@@ -45,8 +51,8 @@ public class FrequencyListAdpter extends RecyclerView.Adapter<FrequencyListAdpte
     }
 
     @Override
-    public void onBindViewHolder(FrequencyViewHolder frequencyViewHolder, int position) {
-        Frequency frequencyObj = frequencies.get(position);
+    public void onBindViewHolder(final FrequencyViewHolder frequencyViewHolder, int position) {
+        final Frequency frequencyObj = frequencies.get(position);
         String frequencyStr;
 
         if (frequencyObj.getFrequency_range().length == 1) {
@@ -61,7 +67,15 @@ public class FrequencyListAdpter extends RecyclerView.Adapter<FrequencyListAdpte
         frequencyViewHolder.span.setText(frequencyObj.getFrequency_span());
         frequencyViewHolder.type.setText(frequencyObj.getFrequency_type());
         frequencyViewHolder.eirp.setText(frequencyObj.getEIRP());
-        // TODO : launch a new activity / fragment when button pressed
+        frequencyViewHolder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(parent, FrequencyDetailsActivity.class);
+                intent.putExtra(AppKeys.frequencyIntentKey, frequencyObj);
+                parent.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
