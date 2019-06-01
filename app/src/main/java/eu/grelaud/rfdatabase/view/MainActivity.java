@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void updateFrequencyList(String uitName, List<Frequency> frequencies) {
         this.uit_name.setText(uitName);
-        this.frequencyListAdapter = new FrequencyListAdpter(frequencies);
+        this.frequencyListAdapter = new FrequencyListAdpter(this, frequencies);
         this.frequencyList.setAdapter(this.frequencyListAdapter);
     }
 
@@ -117,16 +117,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)
+
         mainController.updateFrequenciesList((String)parent.getItemAtPosition(pos));
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
     }
-
-
-
 
 }
