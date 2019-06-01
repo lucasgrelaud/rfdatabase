@@ -1,6 +1,8 @@
 package eu.grelaud.rfdatabase.model;
 
-public class Frequency {
+import java.io.Serializable;
+
+public class Frequency implements Serializable {
     private Float[] frequency_range;
     private String frequency_base;
     private String frequency_span;

@@ -1,16 +1,13 @@
 package eu.grelaud.rfdatabase.controller;
 
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
 import android.text.TextUtils;
-import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import eu.grelaud.rfdatabase.RFDatabaseRestAPI;
 
-import eu.grelaud.rfdatabase.SharedPreferencesKeys;
+import eu.grelaud.rfdatabase.AppKeys;
 import eu.grelaud.rfdatabase.model.Frequency;
 import eu.grelaud.rfdatabase.model.Region;
 import eu.grelaud.rfdatabase.model.RestFrequencyResponse;
@@ -84,14 +81,14 @@ public class MainController {
         String frequenciesCache = this.gson.toJson(frequencies);
         this.sharedPreferences
                 .edit()
-                .putString(SharedPreferencesKeys.regionCacheKey, regionCache)
-                .putString(SharedPreferencesKeys.frequenciesCacheKey, frequenciesCache)
+                .putString(AppKeys.regionCacheKey, regionCache)
+                .putString(AppKeys.frequenciesCacheKey, frequenciesCache)
                 .apply();
     }
 
     private void getCachedData(){
-        String regionsStr = this.sharedPreferences.getString(SharedPreferencesKeys.regionCacheKey, "");
-        String frequenciesStr = this.sharedPreferences.getString(SharedPreferencesKeys.frequenciesCacheKey, "");
+        String regionsStr = this.sharedPreferences.getString(AppKeys.regionCacheKey, "");
+        String frequenciesStr = this.sharedPreferences.getString(AppKeys.frequenciesCacheKey, "");
 
         if(regionsStr != null && !TextUtils.isEmpty(regionsStr)){
             Type regionListType = new TypeToken<List<Region>>(){}.getType();
