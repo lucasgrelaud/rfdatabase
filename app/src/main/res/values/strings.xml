@@ -24,5 +24,6 @@
     <string name="emergency_label">Emergency</string>
     <string name="flr_button_desc">Button to switch to frequency details</string>
     <string name="afd_title_label">Frequency details</string>
+    <string name="unknown_data">Unknown data</string>
 
 </resources>
