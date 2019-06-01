@@ -25,5 +25,6 @@
     <string name="flr_button_desc">Button to switch to frequency details</string>
     <string name="afd_title_label">Frequency details</string>
     <string name="unknown_data">Unknown data</string>
-
+    <string name="no_internet_startup">No access to the internet. Will use the cached data.</string>
+    <string name="no_internet_loading">The server does not respond. Will use the cached data.</string>
 </resources>

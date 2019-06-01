@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             return true;
         }
         else {
-            createToast("No access to the internet. Will use the cached data.");
+            createToast(this.getString(R.string.no_internet_startup));
             return false;
         }
     }
