@@ -41,6 +41,8 @@ Here ares the projects requirement for the lecture.
 | Improvement   |  Animation between activities| ✅       |
 | Improvement   |  Push notifications          | ⬜       |
 
+The GitFlow network graph is available [here][gitflow-network].
+
 In addition of these requirements, some feature have been implemented :
     
    - Network connectivity detection
@@ -75,6 +77,7 @@ Please note that each transition is handled by a custom sliding animation.
 ![animation-img][animation-img]
 
 [release]: https://github.com/lucasgrelaud/rfdatabase/releases
+[gitflow-network]: https://github.com/lucasgrelaud/rfdatabase/network
 [frequency-listing-img]: /doc/img/frequency-listing.png?raw=true
 [frequency-listing-spinner-img]: /doc/img/frequency-listing-spinner.png?raw=true
 [frequency-listing2-img]: /doc/img/frequency-listing2.png?raw=true
