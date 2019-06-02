@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import eu.grelaud.rfdatabase.R;
 import eu.grelaud.rfdatabase.RFDatabaseRestAPI;
 
 import eu.grelaud.rfdatabase.AppKeys;
@@ -60,6 +61,7 @@ public class MainController {
                 @Override
                 public void onFailure(Call<RestFrequencyResponse> call, Throwable t) {
                     getCachedData();
+                    mainActivity.createToast(mainActivity.getString(R.string.no_internet_loading));
                     if (regions != null) {
                         updateCountryList();
                     }
