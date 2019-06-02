@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import eu.grelaud.rfdatabase.AppKeys;
 import eu.grelaud.rfdatabase.R;
 import eu.grelaud.rfdatabase.model.Frequency;
@@ -73,7 +72,6 @@ public class FrequencyListAdpter extends RecyclerView.Adapter<FrequencyListAdpte
                 Intent intent = new Intent(parent, FrequencyDetailsActivity.class);
                 intent.putExtra(AppKeys.frequencyIntentKey, frequencyObj);
                 parent.startActivity(intent);
-
             }
         });
     }

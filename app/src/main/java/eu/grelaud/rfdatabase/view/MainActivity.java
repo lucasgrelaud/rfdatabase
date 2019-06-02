@@ -1,19 +1,21 @@
 package eu.grelaud.rfdatabase.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
+import eu.grelaud.rfdatabase.AppKeys;
 import eu.grelaud.rfdatabase.Injector;
 import eu.grelaud.rfdatabase.R;
 import eu.grelaud.rfdatabase.controller.MainController;
@@ -81,7 +83,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         int id = item.getItemId();
         // TODO : Set the wanted menu options
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(AppKeys.projectGithubRepositoyUrl));
+            startActivity(intent);
             return true;
         }
 
@@ -106,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             return true;
         }
         else {
-            createToast("No access to the internet. Will use the cached data.");
+            createToast(this.getString(R.string.no_internet_startup));
             return false;
         }
     }
